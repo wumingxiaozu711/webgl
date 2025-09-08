@@ -260,7 +260,7 @@ a_Screen_Size 变量用来接收 JavaScript 传递过来的 canvas 的宽高尺�
 </li>
 </ul>
 <h3 data-id="heading-8">HTML 部分</h3>
-<pre><code lang="ini" class="hljs language-ini"><script <span class="hljs-attr">type</span>=<span class="hljs-string">"shader-source"</span> id=<span class="hljs-string">"vertexShader"</span>>
+<pre><code lang="ini" class="hljs language-ini">type</span>=<span class="hljs-string">"shader-source"</span> id=<span class="hljs-string">"vertexShader"</span>>
  precision mediump float<span class="hljs-comment">;</span>
 	//接收点在 canvas 坐标系上的坐标 (x, y)
  attribute vec2 a_Position<span class="hljs-comment">;</span>
@@ -273,11 +273,10 @@ a_Screen_Size 变量用来接收 JavaScript 传递过来的 canvas 的宽高尺�
  	 <span class="hljs-attr">gl_Position</span> = vec4(position, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>)<span class="hljs-comment">;</span>
  	 //声明要绘制的点的大小。
  	 <span class="hljs-attr">gl_PointSize</span> = <span class="hljs-number">10.0</span><span class="hljs-comment">;</span>
- } 
- </script>
+ }
 
  <!-- 片元着色器源码 -->
- <script <span class="hljs-attr">type</span>=<span class="hljs-string">"shader-source"</span> id=<span class="hljs-string">"fragmentShader"</span>>
+ <span class="hljs-attr">type</span>=<span class="hljs-string">"shader-source"</span> id=<span class="hljs-string">"fragmentShader"</span>>
  precision mediump float<span class="hljs-comment">;</span>
  //接收 JavaScript 传过来的颜色值（rgba）。
  uniform vec4 u_Color<span class="hljs-comment">;</span>
@@ -285,10 +284,8 @@ a_Screen_Size 变量用来接收 JavaScript 传递过来的 canvas 的宽高尺�
  	 vec4 <span class="hljs-attr">color</span> = u_Color / vec4(<span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>, <span class="hljs-number">1</span>)<span class="hljs-comment">;</span>
  	 <span class="hljs-attr">gl_FragColor</span> = color<span class="hljs-comment">; </span>
  }
- </script>
 
- <canvas <span class="hljs-attr">id</span>=<span class="hljs-string">"canvas"</span>></canvas>
-
+ <span class="hljs-attr"><canvas id></span>=<span class="hljs-string">"canvas"</canvas></span>
 </code></pre><h3 data-id="heading-9">JavaScript 程序</h3>
 <p>JavaScript 部分的实现与静态点的绘制大致相同，只是增加了为着色器中变量进行赋值的代码。</p>
 <p>动态绘制点的逻辑是：</p>
